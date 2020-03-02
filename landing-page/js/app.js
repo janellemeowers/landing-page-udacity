@@ -59,7 +59,7 @@ let isInViewport = function (elem) {
         );
     };
 
-    for (i=1; i<sections.length; i++) {
+    for (i=1; i<sections.length+1; i++) {
       let sectionInView = document.getElementById("section"+i);
 
   window.addEventListener("scroll", function() {

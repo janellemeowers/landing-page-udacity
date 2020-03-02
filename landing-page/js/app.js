@@ -48,10 +48,9 @@ function navClick () {
     });}
 
 
-    // Add class 'active' to section when near top of viewport
-function isSectionInView() {
-var isInViewport = function (elem) {
-        var bounding = elem.getBoundingClientRect();
+ function checkSectionView() {
+let isInViewport = function (elem) {
+      let bounding = elem.getBoundingClientRect();
          return (
             bounding.top >= 0 &&
             bounding.left >= 0 &&
@@ -60,24 +59,26 @@ var isInViewport = function (elem) {
         );
     };
 
-for (i=1; i<sections.length; i++) {
-  let sectionInView = document.getElementById("section"+i);
-}
+    for (i=1; i<sections.length; i++) {
+      let sectionInView = document.getElementById("section"+i);
 
-window.addEventListener("scroll", function() {
-        if (isSectionInView(sectionInView)) {
+  window.addEventListener("scroll", function() {
+        if (isInViewport(sectionInView)) {
           sectionInView.classList.add("your-active-class");
         } else {
           sectionInView.classList.remove("your-active-class");
-        }
       }
-    );
-  }
+    }
+);}
+
+}
 
 
 
 
-const button = document.querySelector(".btn");
+
+
+  const button = document.querySelector(".btn");
   //Scroll to top
   function scrollUp(){
   button.addEventListener("click",function () {
@@ -100,4 +101,7 @@ navClick();
 // Build menu
 addNavLinks();
 // Set sections as active
+checkSectionView();
+
+//Button scrolls up
 scrollUp();

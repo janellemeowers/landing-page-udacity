@@ -77,13 +77,15 @@ window.addEventListener("scroll", function() {
 
 
 
-const button = document.querySelector("btn")
-//Scroll to top
-function scrollUp(){
-button.on("click",function () {
-  window.scrollTop(0);
-}
-);}
+const button = document.querySelector(".btn");
+  //Scroll to top
+  function scrollUp(){
+  button.addEventListener("click",function () {
+    window.scrollTo({behavior: "smooth",
+    top: 0,
+  left:0 });
+  }
+  );}
 
 
 

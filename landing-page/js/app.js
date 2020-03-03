@@ -17,13 +17,13 @@
  * Define Global Variables
  *
 */
-var sections = document.querySelectorAll('section');
-var navbar = document.getElementById('navbar__list');
 
-/**
- * End Global Variables
+let sections = document.querySelectorAll('section');
+let navbar = document.getElementById('navbar__list');
 
-/*navbar*/
+
+
+//navbar
 
 function addNavLinks() {
     for (let section of sections) {
@@ -41,14 +41,15 @@ function addNavLinks() {
 // Scroll to anchor ID using scrollTO event
 
 function navClick () {
-    navbar.addEventListener('click', function (e) {
+    navbar.addEventListener("click", function (e) {
       //# anchor ID link to section
         const goTo = document.querySelector('#' + e.target.dataset.link);
         goTo.scrollIntoView({behavior: "smooth"});
     });}
 
 
- function checkSectionView() {
+    // Add class 'active' to section when near top of viewport
+function checkSectionView() {
 let isInViewport = function (elem) {
       let bounding = elem.getBoundingClientRect();
          return (
@@ -97,9 +98,11 @@ let isInViewport = function (elem) {
  */
 
 
-navClick();
+
 // Build menu
 addNavLinks();
+//nav event listener
+navClick();
 // Set sections as active
 checkSectionView();
 
